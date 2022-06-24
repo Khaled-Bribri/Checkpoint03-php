@@ -1,0 +1,6 @@
+@import 'bootstrap';
+@import 'style';
+@import 'map';
+body {
+    background-color: lightgray;
+}
