@@ -54,14 +54,39 @@
 					<h2>
 						Information
 					</h2>
-					{# Add here informations about current ship position #}
+					<h2>Pos in X: {{boat.coordX}}</h2>
+					<h2>Pos in Y:{{boat.coordY}}</h2>
+					{% for tiles in map %}
+						{% for tile in tiles %}
+							{% if boat.coordX == tile.coordX and boat.coordY == tile.coordY  %}
+							<h2>type of the tile:{{tile.type}}</h2>
+							{% endif %}	
+						{% endfor %}
+					{% endfor %}
+
+					<h3><h3>
 				</div>
 				<div
 					class="navigation">
 					<h2>
 						Navigation
 					</h2>
-					{# Add here N/S/E/W buttons #}
+					</h2>
+					<a style="margin-left:6em" class="btn btn-outline-primary" href="{{ path('moveDirection', {direction: 'N'}) }}">North</a>
+                    <br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<a style="margin-right:8em" class="btn btn-outline-primary"  href="{{ path('moveDirection', {direction: 'E'}) }}">East</a>
+                    <a class="btn btn-outline-primary" href="{{ path('moveDirection', {direction: 'W'}) }}">West</a>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<a style="margin-left:6em" class="btn btn-outline-primary" href="{{ path('moveDirection', {direction: 'S'}) }}">South</a>
+
 				</div>
 			</div>
 		</div>
